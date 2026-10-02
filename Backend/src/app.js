@@ -13,7 +13,20 @@ app.use(cors({
 }))
 /* require all the routes here */
 const authRouter = require("./routes/auth.routes")
+const interviewRouter = require("./routes/interview.routes")
 
 /*using all the routes here */
 app.use("/api/auth", authRouter)
+app.use("/api/interview", interviewRouter)
+
+app.use((err, req, res, next) => {
+    if (err.message === "Malformed part header") {
+        return res.status(400).json({
+            message: "Malformed multipart request. Do not set the Content-Type header manually; let the client add the multipart boundary."
+        })
+    }
+
+    next(err)
+})
+
 module.exports = app
