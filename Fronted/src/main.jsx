@@ -5,7 +5,6 @@ import App from "./App.jsx";
 import { store } from "./app/store.js";
 
 import "./globals.css";
-import "./style/button.scss";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

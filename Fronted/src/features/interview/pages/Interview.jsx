@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
-import { AppHeader } from "../../../components/AppHeader";
+import { DashboardLayout } from "../../../components/DashboardLayout";
 import { ReportSkeleton } from "../../../components/PageSkeleton";
 import { Button } from "../../../components/ui/button";
 import {
@@ -62,8 +62,7 @@ export default function Interview() {
     : `${questions.length} questions`;
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <AppHeader />
+    <DashboardLayout>
       <main>
         <section className="border-b border-border bg-muted/40">
           <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
@@ -184,7 +183,7 @@ export default function Interview() {
           </aside>
         </div>
       </main>
-    </div>
+    </DashboardLayout>
   );
 }
 
@@ -280,8 +279,7 @@ function Questions({ items }) {
 }
 function StatusPage({ icon: Icon, title, copy }) {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <AppHeader />
+    <DashboardLayout>
       <main className="grid min-h-[calc(100vh-4rem)] place-items-center px-4">
         <div className="max-w-md text-center">
           <span className="mx-auto grid size-14 place-items-center rounded-full bg-accent text-accent-foreground">
@@ -294,6 +292,6 @@ function StatusPage({ icon: Icon, title, copy }) {
           </Button>
         </div>
       </main>
-    </div>
+    </DashboardLayout>
   );
 }

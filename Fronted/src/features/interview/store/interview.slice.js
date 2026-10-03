@@ -68,6 +68,9 @@ const interviewSlice = createSlice({
       })
       .addCase(generateReport.fulfilled, (state, action) => {
         state.report = action.payload;
+        if (!state.reports.some((item) => item._id === action.payload._id)) {
+          state.reports.unshift(action.payload);
+        }
       })
       .addCase(fetchReportById.fulfilled, (state, action) => {
         state.report = action.payload;

@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router";
-import { AppHeader } from "../../../components/AppHeader";
+import { DashboardLayout } from "../../../components/DashboardLayout";
 import { Button } from "../../../components/ui/button";
 import {
   Card,
@@ -61,8 +61,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <AppHeader />
+    <DashboardLayout>
       <main>
         <section className="border-b border-border bg-muted/40">
           <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
@@ -192,7 +191,7 @@ export default function Home() {
           </form>
         </section>
       </main>
-    </div>
+    </DashboardLayout>
   );
 }
 
