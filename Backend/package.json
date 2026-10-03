@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@google/genai": "^2.24.0",
+    "@napi-rs/canvas": "^1.0.10",
     "bcryptjs": "^3.0.3",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",
